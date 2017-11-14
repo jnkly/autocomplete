@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
+  <link rel="stylesheet" href="autocomplete.css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    $("input#autocomplete").autocomplete({
+        source: [
+             { value: "Report a pothole", url: 'https://www.rotherham.gov.uk/forms/form/778/en/report_a_pothole_siebel' }, 
+             { value: "Report an obstruction or hazard on a highway", url: 'https://www.rotherham.gov.uk/forms/form/779/en/report_an_obstruction_or_hazard_on_a_highway_siebel' },
+             { value: "Snow warden enquiry", url: 'https://www.rotherham.gov.uk/forms/form/804/en/snow_warden_enquiry_siebel' },
+             { value: "Report a problem with a manhole, gully or service cover", url: 'https://www.rotherham.gov.uk/forms/form/802/en/report_a_problem_with_a_manhole_gully_or_service_cover_siebel' },
+             { value: "Report dangerous weeds on public land", url: 'https://www.rotherham.gov.uk/forms/form/807/en/report_dangerous_weeds_on_public_land_siebel' },
+             { value: "Request gritting on a public road", url: 'https://www.rotherham.gov.uk/forms/form/805/en/request_gritting_on_a_public_road_siebel' },
+             { value: "Report or request a Council grit bin", url: 'https://www.rotherham.gov.uk/forms/form/808/en/report_a_problem_with_a_council_grit_bin_siebel' }
+        ],
+        select: function (event, ui) {
+            window.location = ui.item.url;
+        }
+    });
+});
+  </script>
+</head>
+<body class="pa0 ma0 system-sans-serif">
+
+<header class="bg-black-90">
+  <div class="cf mw8 center">
+    <a class="ml3 dib fl pv3 f5 f4-m f3-l b white" href="/" title="Home">Rotherham.gov.uk</a>
+  </div>
+</header>
+
+<section class="bg-black-05 pb3">
+  <div class="cf mw7 center tc">
+    <div class="w-100">
+    <h1 class="f2 fw3 black-90 mb3">Search for a customer form</h1>
+  </div>
+  <div class="w-100">
+    <input placeholder="Type the name of the form" id="autocomplete" class="w-80 mw-100 pa3 bg-white black-90 br2 mb2 ba bw1 b--black-10" />
+  </div>
+</div>
+</section>
+
+<footer id="footer" class="pv3 bg-black-40 white">
+    <div class="mw8 center mv2 tc">
+      <img src="https://jnkly.github.io/rmbc/images/rmbc-logo-rev.svg" class="w-40 w-20-m w-10-l">
+    </div>
+</footer>
+
+</body>
+</html>
